@@ -11,9 +11,9 @@ public class Main {
     public static void main(String[] args) {
         String activityType = "user";
         if ("user".equals(activityType)) {
-            abstractActivityFactory = new UserAbstractActivityFactory();
+            abstractActivityFactory = new UserActivityFactory();
         } else {
-            abstractActivityFactory = new DelivererFactoryAbstract();
+            abstractActivityFactory = new DelivererFactory();
         }
         Activity activity = abstractActivityFactory.createActivity();
         activity.create();
