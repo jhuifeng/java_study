@@ -6,16 +6,16 @@ package com.jhuifeng.designpattern.creational.factory;
  */
 public class Main {
 
-    private static ActivityFactory activityFactory;
+    private static AbstractActivityFactory abstractActivityFactory;
 
     public static void main(String[] args) {
         String activityType = "user";
         if ("user".equals(activityType)) {
-            activityFactory = new UserActivityFactory();
+            abstractActivityFactory = new UserAbstractActivityFactory();
         } else {
-            activityFactory = new DelivererFactory();
+            abstractActivityFactory = new DelivererFactoryAbstract();
         }
-        Activity activity = activityFactory.createActivity();
+        Activity activity = abstractActivityFactory.createActivity();
         activity.create();
     }
 
